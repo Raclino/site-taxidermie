@@ -1,0 +1,467 @@
+{
+	"info": {
+		"_postman_id": "8a9b08e5-45d7-431d-a586-344267115f4a",
+		"name": "Taxidermie",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "animals",
+			"item": [
+				{
+					"name": "Modif nom race espece age et couleur d'un animal en fonction du nom(slug)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjY5NGNmYTAxOTgyMDNlMjgwN2Q4MzRkYmE2MjBlZjczZjI4ZTRlMmMiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiVGhvbWFzIERhbmllbCIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQVRYQUp5dUVJdXpuckdNVldHd0JJcXlPamVRcjZrZk82ZGFSX0hSS0lZcj1zOTYtYyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9zaXRldGF4aWRlcm1pZSIsImF1ZCI6InNpdGV0YXhpZGVybWllIiwiYXV0aF90aW1lIjoxNjM1OTUwODM0LCJ1c2VyX2lkIjoiU1p1ME45MEU3bmhvVTRIcTNWaWQ0UmFJcjJzMSIsInN1YiI6IlNadTBOOTBFN25ob1U0SHEzVmlkNFJhSXIyczEiLCJpYXQiOjE2MzU5NTU3MzQsImV4cCI6MTYzNTk1OTMzNCwiZW1haWwiOiJyYWNsaW5vMi4wQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7Imdvb2dsZS5jb20iOlsiMTE3NDYxNzg3NDkxNTAzNjcyNzg1Il0sImVtYWlsIjpbInJhY2xpbm8yLjBAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoiZ29vZ2xlLmNvbSJ9fQ.KEmsdT3AZfiLhoC5EFSH-fUGxmqp_v2ZjKVg3M2I0bCuvmDhMMdsxdeaMOQAXmLE6TV-jUN_kWXg3M6SrHKVfL9jbG05UZ0i6hGLltaQRyAYF8Pe0usxjKVKyfdJRPTyqFMGrakM0ucouVIGVO4BYcci8TkrRNuoPI79FKr5VFYWSX5zJ1Y1BKTkYZDdg3MwQE0BXbMDUMzCrz31VMoJQ0Cq36zL3bU6ReIW405y2NJOvljYknYaAgjl1l7_T6s1Ig7wbHIzHBcK1-qqsfzH-Cj7w04ZACFNJ8mvX0gk1XLiU-uVgc3n_gZFX4UPAwHLn84XPIty6IC2hG3gnFfTsQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Nouveau koala vert\",\r\n    \"race\":\"koala\",\r\n    \"specie\":\"bird\",\r\n    \"age\":\"9\",\r\n    \"color\":\"vert\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/animals/flamboyt-koala-rouge",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"animals",
+								"flamboyt-koala-rouge"
+							]
+						},
+						"description": "Cette route est protégé car elle impacte directement notre Database, vous aurez besoin d'indiquer un token d'authentification valide dans le Header d'un utilisateur appartenant au groupe \"admin\" afin que le corp de la requête s'execute."
+					},
+					"response": []
+				},
+				{
+					"name": "Liste de tous les animaux disponible",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/animals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"animals"
+							]
+						},
+						"description": "Requête de lecture non protégé , accessible à tous, authentification non requise."
+					},
+					"response": []
+				},
+				{
+					"name": "Création d'un animal",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjY5NGNmYTAxOTgyMDNlMjgwN2Q4MzRkYmE2MjBlZjczZjI4ZTRlMmMiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiVGhvbWFzIERhbmllbCIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQVRYQUp5dUVJdXpuckdNVldHd0JJcXlPamVRcjZrZk82ZGFSX0hSS0lZcj1zOTYtYyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9zaXRldGF4aWRlcm1pZSIsImF1ZCI6InNpdGV0YXhpZGVybWllIiwiYXV0aF90aW1lIjoxNjM1OTUwODM0LCJ1c2VyX2lkIjoiU1p1ME45MEU3bmhvVTRIcTNWaWQ0UmFJcjJzMSIsInN1YiI6IlNadTBOOTBFN25ob1U0SHEzVmlkNFJhSXIyczEiLCJpYXQiOjE2MzU5NTU3MzQsImV4cCI6MTYzNTk1OTMzNCwiZW1haWwiOiJyYWNsaW5vMi4wQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7Imdvb2dsZS5jb20iOlsiMTE3NDYxNzg3NDkxNTAzNjcyNzg1Il0sImVtYWlsIjpbInJhY2xpbm8yLjBAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoiZ29vZ2xlLmNvbSJ9fQ.KEmsdT3AZfiLhoC5EFSH-fUGxmqp_v2ZjKVg3M2I0bCuvmDhMMdsxdeaMOQAXmLE6TV-jUN_kWXg3M6SrHKVfL9jbG05UZ0i6hGLltaQRyAYF8Pe0usxjKVKyfdJRPTyqFMGrakM0ucouVIGVO4BYcci8TkrRNuoPI79FKr5VFYWSX5zJ1Y1BKTkYZDdg3MwQE0BXbMDUMzCrz31VMoJQ0Cq36zL3bU6ReIW405y2NJOvljYknYaAgjl1l7_T6s1Ig7wbHIzHBcK1-qqsfzH-Cj7w04ZACFNJ8mvX0gk1XLiU-uVgc3n_gZFX4UPAwHLn84XPIty6IC2hG3gnFfTsQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Toukan jaune amazonien\",\r\n    \"specie\": \"bresilian Toukan\",\r\n    \"race\": \"Toukan\",\r\n    \"age\": 3,\r\n    \"color\": \"Yellow\",\r\n    \"pedestal\": false,\r\n    \"gender\": \"female\",\r\n    \"climate\": \"aride\",\r\n    \"alimentationType\": \"herbivor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/animals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"animals"
+							]
+						},
+						"description": "Cette route est protégé car elle impacte directement notre Database, vous aurez besoin d'indiquer un token d'authentification valide dans le Header d'un utilisateur appartenant au groupe \"admin\" afin que le corp de la requête s'execute."
+					},
+					"response": []
+				},
+				{
+					"name": "Information d'un aminal en fonction de son slug(name)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/animals/flamboyt-koala-rouge",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"animals",
+								"flamboyt-koala-rouge"
+							]
+						},
+						"description": "Requête de lecture non protégé , accessible à tous, authentification non requise."
+					},
+					"response": []
+				},
+				{
+					"name": "supprimer un animal grâce à son nom(slug)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjY5NGNmYTAxOTgyMDNlMjgwN2Q4MzRkYmE2MjBlZjczZjI4ZTRlMmMiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiVGhvbWFzIERhbmllbCIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQVRYQUp5dUVJdXpuckdNVldHd0JJcXlPamVRcjZrZk82ZGFSX0hSS0lZcj1zOTYtYyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9zaXRldGF4aWRlcm1pZSIsImF1ZCI6InNpdGV0YXhpZGVybWllIiwiYXV0aF90aW1lIjoxNjM1OTUwODM0LCJ1c2VyX2lkIjoiU1p1ME45MEU3bmhvVTRIcTNWaWQ0UmFJcjJzMSIsInN1YiI6IlNadTBOOTBFN25ob1U0SHEzVmlkNFJhSXIyczEiLCJpYXQiOjE2MzU5NTU3MzQsImV4cCI6MTYzNTk1OTMzNCwiZW1haWwiOiJyYWNsaW5vMi4wQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7Imdvb2dsZS5jb20iOlsiMTE3NDYxNzg3NDkxNTAzNjcyNzg1Il0sImVtYWlsIjpbInJhY2xpbm8yLjBAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoiZ29vZ2xlLmNvbSJ9fQ.KEmsdT3AZfiLhoC5EFSH-fUGxmqp_v2ZjKVg3M2I0bCuvmDhMMdsxdeaMOQAXmLE6TV-jUN_kWXg3M6SrHKVfL9jbG05UZ0i6hGLltaQRyAYF8Pe0usxjKVKyfdJRPTyqFMGrakM0ucouVIGVO4BYcci8TkrRNuoPI79FKr5VFYWSX5zJ1Y1BKTkYZDdg3MwQE0BXbMDUMzCrz31VMoJQ0Cq36zL3bU6ReIW405y2NJOvljYknYaAgjl1l7_T6s1Ig7wbHIzHBcK1-qqsfzH-Cj7w04ZACFNJ8mvX0gk1XLiU-uVgc3n_gZFX4UPAwHLn84XPIty6IC2hG3gnFfTsQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/animals/flamboyt-koala-rouge",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"animals",
+								"flamboyt-koala-rouge"
+							]
+						},
+						"description": "Cette route est protégé car elle impacte directement notre Database, vous aurez besoin d'indiquer un token d'authentification valide dans le Header d'un utilisateur appartenant au groupe \"admin\" afin que le corp de la requête s'execute."
+					},
+					"response": []
+				}
+			],
+			"description": "Voici les différentes routes disponibles pour notre catégorie \"Animals\""
+		},
+		{
+			"name": "shop",
+			"item": [
+				{
+					"name": "Création d'un shop",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjY5NGNmYTAxOTgyMDNlMjgwN2Q4MzRkYmE2MjBlZjczZjI4ZTRlMmMiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiVGhvbWFzIERhbmllbCIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQVRYQUp5dUVJdXpuckdNVldHd0JJcXlPamVRcjZrZk82ZGFSX0hSS0lZcj1zOTYtYyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9zaXRldGF4aWRlcm1pZSIsImF1ZCI6InNpdGV0YXhpZGVybWllIiwiYXV0aF90aW1lIjoxNjM1OTUwODM0LCJ1c2VyX2lkIjoiU1p1ME45MEU3bmhvVTRIcTNWaWQ0UmFJcjJzMSIsInN1YiI6IlNadTBOOTBFN25ob1U0SHEzVmlkNFJhSXIyczEiLCJpYXQiOjE2MzU5NTA4MzQsImV4cCI6MTYzNTk1NDQzNCwiZW1haWwiOiJyYWNsaW5vMi4wQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7Imdvb2dsZS5jb20iOlsiMTE3NDYxNzg3NDkxNTAzNjcyNzg1Il0sImVtYWlsIjpbInJhY2xpbm8yLjBAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoiZ29vZ2xlLmNvbSJ9fQ.ctEjnHe7O5W-Ft1Y3LTHOQQuLXDnsZNqMKJPF9WNp54UxDIOZyMji62Q3zUsdp5Osl2dDPIn_7452mdcNKa2jlDhOkxoy5RQKlJJVFLqDR2QiAWTj7Z_1aBcfl1r2NRfFrYLLAzVTU5XgJxBNu3cEymL4E3LAuy36diQrvwmbnn1RjVhHvJWs5A2Pg23zeLunqhwkQT_wplQxXa9HQfMq74pDpbW1OiXAwatw19wfhnZ_-WbJb4zfYgr_3gGYiR9dPlS4_yuUgREU76AoX1B7IFLJXGYOIMcIxiMCknZKA3aiFCdSHCXUms3fegGzcm1_B5MocVDx7b-fA8qP2ktuA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jawa\",\r\n    \"owner\": \"Cameron\",\r\n    \"typeShop\": \"physic\",\r\n    \"city\": \"Ivry-sur-seine\",\r\n    \"adress\": \"ETNA\",\r\n    \"nbOfSpecies\": \"45\",\r\n    \"phone\": \"64448536468\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/shop/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"shop",
+								""
+							]
+						},
+						"description": "Cette route est protégé car elle impacte directement notre Database, vous aurez besoin d'indiquer un token d'authentification valide dans le Header d'un utilisateur appartenant au groupe \"admin\" afin que le corp de la requête s'execute."
+					},
+					"response": []
+				},
+				{
+					"name": "List des shop",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/shop",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"shop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Information d'un shop en fonction de son slug(name)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/shop/mefisto-demon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"shop",
+								"mefisto-demon"
+							]
+						},
+						"description": "Requête de lecture non protégé , accessible à tous, authentification non requise."
+					},
+					"response": []
+				},
+				{
+					"name": "Modification du nom d'un shop en fonction de son slug(name)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjY5NGNmYTAxOTgyMDNlMjgwN2Q4MzRkYmE2MjBlZjczZjI4ZTRlMmMiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiVGhvbWFzIERhbmllbCIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQVRYQUp5dUVJdXpuckdNVldHd0JJcXlPamVRcjZrZk82ZGFSX0hSS0lZcj1zOTYtYyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9zaXRldGF4aWRlcm1pZSIsImF1ZCI6InNpdGV0YXhpZGVybWllIiwiYXV0aF90aW1lIjoxNjM1OTUwODM0LCJ1c2VyX2lkIjoiU1p1ME45MEU3bmhvVTRIcTNWaWQ0UmFJcjJzMSIsInN1YiI6IlNadTBOOTBFN25ob1U0SHEzVmlkNFJhSXIyczEiLCJpYXQiOjE2MzU5NTA4MzQsImV4cCI6MTYzNTk1NDQzNCwiZW1haWwiOiJyYWNsaW5vMi4wQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7Imdvb2dsZS5jb20iOlsiMTE3NDYxNzg3NDkxNTAzNjcyNzg1Il0sImVtYWlsIjpbInJhY2xpbm8yLjBAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoiZ29vZ2xlLmNvbSJ9fQ.ctEjnHe7O5W-Ft1Y3LTHOQQuLXDnsZNqMKJPF9WNp54UxDIOZyMji62Q3zUsdp5Osl2dDPIn_7452mdcNKa2jlDhOkxoy5RQKlJJVFLqDR2QiAWTj7Z_1aBcfl1r2NRfFrYLLAzVTU5XgJxBNu3cEymL4E3LAuy36diQrvwmbnn1RjVhHvJWs5A2Pg23zeLunqhwkQT_wplQxXa9HQfMq74pDpbW1OiXAwatw19wfhnZ_-WbJb4zfYgr_3gGYiR9dPlS4_yuUgREU76AoX1B7IFLJXGYOIMcIxiMCknZKA3aiFCdSHCXUms3fegGzcm1_B5MocVDx7b-fA8qP2ktuA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nouveau test version deux\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/shop/test",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"shop",
+								"test"
+							]
+						},
+						"description": "Cette route est protégé car elle impacte directement notre Database, vous aurez besoin d'indiquer un token d'authentification valide dans le Header d'un utilisateur appartenant au groupe \"admin\" afin que le corp de la requête s'execute."
+					},
+					"response": []
+				},
+				{
+					"name": "supprime toutes les info d'un shop en fonction de son slug(name)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjY5NGNmYTAxOTgyMDNlMjgwN2Q4MzRkYmE2MjBlZjczZjI4ZTRlMmMiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiVGhvbWFzIERhbmllbCIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQVRYQUp5dUVJdXpuckdNVldHd0JJcXlPamVRcjZrZk82ZGFSX0hSS0lZcj1zOTYtYyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9zaXRldGF4aWRlcm1pZSIsImF1ZCI6InNpdGV0YXhpZGVybWllIiwiYXV0aF90aW1lIjoxNjM1OTUwODM0LCJ1c2VyX2lkIjoiU1p1ME45MEU3bmhvVTRIcTNWaWQ0UmFJcjJzMSIsInN1YiI6IlNadTBOOTBFN25ob1U0SHEzVmlkNFJhSXIyczEiLCJpYXQiOjE2MzU5NTA4MzQsImV4cCI6MTYzNTk1NDQzNCwiZW1haWwiOiJyYWNsaW5vMi4wQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7Imdvb2dsZS5jb20iOlsiMTE3NDYxNzg3NDkxNTAzNjcyNzg1Il0sImVtYWlsIjpbInJhY2xpbm8yLjBAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoiZ29vZ2xlLmNvbSJ9fQ.ctEjnHe7O5W-Ft1Y3LTHOQQuLXDnsZNqMKJPF9WNp54UxDIOZyMji62Q3zUsdp5Osl2dDPIn_7452mdcNKa2jlDhOkxoy5RQKlJJVFLqDR2QiAWTj7Z_1aBcfl1r2NRfFrYLLAzVTU5XgJxBNu3cEymL4E3LAuy36diQrvwmbnn1RjVhHvJWs5A2Pg23zeLunqhwkQT_wplQxXa9HQfMq74pDpbW1OiXAwatw19wfhnZ_-WbJb4zfYgr_3gGYiR9dPlS4_yuUgREU76AoX1B7IFLJXGYOIMcIxiMCknZKA3aiFCdSHCXUms3fegGzcm1_B5MocVDx7b-fA8qP2ktuA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/shop/ceci-est-un-exemple",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"shop",
+								"ceci-est-un-exemple"
+							]
+						},
+						"description": "Cette route est protégé car elle impacte directement notre Database, vous aurez besoin d'indiquer un token d'authentification valide dans le Header d'un utilisateur appartenant au groupe \"admin\" afin que le corp de la requête s'execute."
+					},
+					"response": []
+				}
+			],
+			"description": "Voici les différentes requêtes disponible pour notre collection shop."
+		},
+		{
+			"name": "providers",
+			"item": [
+				{
+					"name": "List de tous les fournisseurs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/providers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"providers"
+							]
+						},
+						"description": "Requête de lecture non protégé , accessible à tous, authentification non requise."
+					},
+					"response": []
+				},
+				{
+					"name": "Supprime un fournisseur",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjY5NGNmYTAxOTgyMDNlMjgwN2Q4MzRkYmE2MjBlZjczZjI4ZTRlMmMiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiVGhvbWFzIERhbmllbCIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQVRYQUp5dUVJdXpuckdNVldHd0JJcXlPamVRcjZrZk82ZGFSX0hSS0lZcj1zOTYtYyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9zaXRldGF4aWRlcm1pZSIsImF1ZCI6InNpdGV0YXhpZGVybWllIiwiYXV0aF90aW1lIjoxNjM1OTUwODM0LCJ1c2VyX2lkIjoiU1p1ME45MEU3bmhvVTRIcTNWaWQ0UmFJcjJzMSIsInN1YiI6IlNadTBOOTBFN25ob1U0SHEzVmlkNFJhSXIyczEiLCJpYXQiOjE2MzU5NTA4MzQsImV4cCI6MTYzNTk1NDQzNCwiZW1haWwiOiJyYWNsaW5vMi4wQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7Imdvb2dsZS5jb20iOlsiMTE3NDYxNzg3NDkxNTAzNjcyNzg1Il0sImVtYWlsIjpbInJhY2xpbm8yLjBAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoiZ29vZ2xlLmNvbSJ9fQ.ctEjnHe7O5W-Ft1Y3LTHOQQuLXDnsZNqMKJPF9WNp54UxDIOZyMji62Q3zUsdp5Osl2dDPIn_7452mdcNKa2jlDhOkxoy5RQKlJJVFLqDR2QiAWTj7Z_1aBcfl1r2NRfFrYLLAzVTU5XgJxBNu3cEymL4E3LAuy36diQrvwmbnn1RjVhHvJWs5A2Pg23zeLunqhwkQT_wplQxXa9HQfMq74pDpbW1OiXAwatw19wfhnZ_-WbJb4zfYgr_3gGYiR9dPlS4_yuUgREU76AoX1B7IFLJXGYOIMcIxiMCknZKA3aiFCdSHCXUms3fegGzcm1_B5MocVDx7b-fA8qP2ktuA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/providers/taxidermie-russian",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"providers",
+								"taxidermie-russian"
+							]
+						},
+						"description": "Cette route est protégé car elle impacte directement notre Database, vous aurez besoin d'indiquer un token d'authentification valide dans le Header d'un utilisateur appartenant au groupe \"admin\" afin que le corp de la requête s'execute."
+					},
+					"response": []
+				},
+				{
+					"name": "Création d'un fournisseur",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjY5NGNmYTAxOTgyMDNlMjgwN2Q4MzRkYmE2MjBlZjczZjI4ZTRlMmMiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiVGhvbWFzIERhbmllbCIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQVRYQUp5dUVJdXpuckdNVldHd0JJcXlPamVRcjZrZk82ZGFSX0hSS0lZcj1zOTYtYyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9zaXRldGF4aWRlcm1pZSIsImF1ZCI6InNpdGV0YXhpZGVybWllIiwiYXV0aF90aW1lIjoxNjM1OTUwODM0LCJ1c2VyX2lkIjoiU1p1ME45MEU3bmhvVTRIcTNWaWQ0UmFJcjJzMSIsInN1YiI6IlNadTBOOTBFN25ob1U0SHEzVmlkNFJhSXIyczEiLCJpYXQiOjE2MzU5NTA4MzQsImV4cCI6MTYzNTk1NDQzNCwiZW1haWwiOiJyYWNsaW5vMi4wQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7Imdvb2dsZS5jb20iOlsiMTE3NDYxNzg3NDkxNTAzNjcyNzg1Il0sImVtYWlsIjpbInJhY2xpbm8yLjBAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoiZ29vZ2xlLmNvbSJ9fQ.ctEjnHe7O5W-Ft1Y3LTHOQQuLXDnsZNqMKJPF9WNp54UxDIOZyMji62Q3zUsdp5Osl2dDPIn_7452mdcNKa2jlDhOkxoy5RQKlJJVFLqDR2QiAWTj7Z_1aBcfl1r2NRfFrYLLAzVTU5XgJxBNu3cEymL4E3LAuy36diQrvwmbnn1RjVhHvJWs5A2Pg23zeLunqhwkQT_wplQxXa9HQfMq74pDpbW1OiXAwatw19wfhnZ_-WbJb4zfYgr_3gGYiR9dPlS4_yuUgREU76AoX1B7IFLJXGYOIMcIxiMCknZKA3aiFCdSHCXUms3fegGzcm1_B5MocVDx7b-fA8qP2ktuA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"King taxidermie Official\",\r\n    \"typeOfBusiness\": \"physic\",\r\n    \"city\": \"Monaco\",\r\n    \"adress\": \"King castle\",\r\n    \"nbOfSpecies\": 5,\r\n    \"slaughterhouse\": \"yes\",\r\n    \"website\": \"king-taxidermie.com\",\r\n    \"phone\": \"165568749\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/providers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"providers"
+							]
+						},
+						"description": "Cette route est protégé car elle impacte directement notre Database, vous aurez besoin d'indiquer un token d'authentification valide dans le Header d'un utilisateur appartenant au groupe \"admin\" afin que le corp de la requête s'execute."
+					},
+					"response": []
+				},
+				{
+					"name": "Information d'un fournisseurs en fonction de son slug",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/providers/king-taxidermie-official",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"providers",
+								"king-taxidermie-official"
+							]
+						},
+						"description": "Requête de lecture non protégé , accessible à tous, authentification non requise."
+					},
+					"response": []
+				},
+				{
+					"name": "Modification du nom, telephone et website d'un fournisseur en fonction de son slug(name)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authtoken",
+								"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjY5NGNmYTAxOTgyMDNlMjgwN2Q4MzRkYmE2MjBlZjczZjI4ZTRlMmMiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiVGhvbWFzIERhbmllbCIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQVRYQUp5dUVJdXpuckdNVldHd0JJcXlPamVRcjZrZk82ZGFSX0hSS0lZcj1zOTYtYyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9zaXRldGF4aWRlcm1pZSIsImF1ZCI6InNpdGV0YXhpZGVybWllIiwiYXV0aF90aW1lIjoxNjM1OTUwODM0LCJ1c2VyX2lkIjoiU1p1ME45MEU3bmhvVTRIcTNWaWQ0UmFJcjJzMSIsInN1YiI6IlNadTBOOTBFN25ob1U0SHEzVmlkNFJhSXIyczEiLCJpYXQiOjE2MzU5NTU3MzQsImV4cCI6MTYzNTk1OTMzNCwiZW1haWwiOiJyYWNsaW5vMi4wQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7Imdvb2dsZS5jb20iOlsiMTE3NDYxNzg3NDkxNTAzNjcyNzg1Il0sImVtYWlsIjpbInJhY2xpbm8yLjBAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoiZ29vZ2xlLmNvbSJ9fQ.KEmsdT3AZfiLhoC5EFSH-fUGxmqp_v2ZjKVg3M2I0bCuvmDhMMdsxdeaMOQAXmLE6TV-jUN_kWXg3M6SrHKVfL9jbG05UZ0i6hGLltaQRyAYF8Pe0usxjKVKyfdJRPTyqFMGrakM0ucouVIGVO4BYcci8TkrRNuoPI79FKr5VFYWSX5zJ1Y1BKTkYZDdg3MwQE0BXbMDUMzCrz31VMoJQ0Cq36zL3bU6ReIW405y2NJOvljYknYaAgjl1l7_T6s1Ig7wbHIzHBcK1-qqsfzH-Cj7w04ZACFNJ8mvX0gk1XLiU-uVgc3n_gZFX4UPAwHLn84XPIty6IC2hG3gnFfTsQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"taxifuturepro\",\r\n    \"phone\": \"198989898\",\r\n    \"website\":\"taxifuturepro.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/providers/taxipro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"providers",
+								"taxipro"
+							]
+						},
+						"description": "Cette route est protégé car elle impacte directement notre Database, vous aurez besoin d'indiquer un token d'authentification valide dans le Header d'un utilisateur appartenant au groupe \"admin\" afin que le corp de la requête s'execute."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
